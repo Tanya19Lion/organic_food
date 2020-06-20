@@ -1,0 +1,51 @@
+@import '_fonts';
+
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body {
+    font-family: 'OpenSans-Regular';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    color: #4E4E4E;
+}
+html,
+body {
+	height: 100%;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
