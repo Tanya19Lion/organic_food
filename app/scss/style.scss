@@ -149,7 +149,7 @@
 
 //end header
 
-//start ssection slogan
+//start section slogan
 
 .slogan{
     margin-bottom: 155px;
@@ -206,6 +206,11 @@
     }
     &__inner-item {
         text-align: center;
+        transition: all .5s;
+        color: $text;
+        font-family: 'Raleway-Bold';
+        font-weight: 700;
+        font-size: 16px;
     }
     &__inner-img {
         margin-bottom: 30px;
@@ -213,12 +218,31 @@
             height: 56px;
         }
     }
-    &__inner-details {
-        color: $text;
-        font-family: 'Raleway-Bold';
-        font-weight: 700;
-        font-size: 16px;
+    &__inner-item--pink:hover,
+    &__inner-item--pink:focus {
+        color: #ff6262;
     }
+    &__inner-item--blue:hover,
+    &__inner-item--blue:focus {
+        color: #4fb1c9;
+    }
+    &__inner-item--yellow:hover,
+    &__inner-item--yellow:focus {
+        color: #ffc243;
+    }
+    &__inner-item--lightgreen:hover,
+    &__inner-item--lightgreen:focus {
+        color: #8eaa41;
+    }
+    &__inner-item--red:hover,
+    &__inner-item--red:focus {
+        color: #f2374d;
+    }
+    &__inner-item--green:hover,
+    &__inner-item--green:focus {
+        color: #4b811b;
+    }
+
 }
 
 //end services
@@ -280,14 +304,14 @@
     }
     &__examples-details {
         background-color: #fff;
-        padding: 30px 40px;
+        padding: 25px 40px;
     }
     &__examples-title {
         color: $text;
         font-size: 18px;
         font-family: 'Raleway-Bold';
         font-weight: 700;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
     }
     &__examples-text {
         color: #666666;
@@ -413,9 +437,10 @@
     }
     &__inner-info {
         position: absolute;
-        left: 30px;
-        bottom: 30px;
+        left: 0px;
+        bottom: 0px;
         text-align: left;
+        padding: 30px;
     }
     &__inner-subtitle {
         font-size: 12px;
@@ -426,7 +451,13 @@
         font-family: 'Raleway-Bold';
         font-weight: 700;
         font-size: 18px;
+        line-height: 25px;
         color: #fff;
+        transition: all .5s;
+        &:hover,
+        &:focus {
+            color: gold;
+        }
     }
     &__btn {
         font-family: 'Raleway-Bold';
@@ -472,12 +503,13 @@
         max-width: 990px;
         text-align: left;
         margin: 0 auto;
-        font-style: italic;
         font-size: 25px;
         line-height: 30px;
         position: relative;
         padding-left: 88px;
         margin-bottom: 44px;
+        font-family: 'Raleway-Light';
+        font-weight: 300;
         &::before {
             content:"";
             position: absolute;
@@ -575,7 +607,7 @@
        padding-top: 80px;
        max-width: 670px;
        width: 100%;
-       margin: 0 auto;
+       margin: 0 170px 0 auto;
     }
    &__inner-box {
        display: flex;
@@ -616,7 +648,13 @@
    }
    &__inner-contacts {
        display: flex;
-
+   }
+   &__social-link {
+       transition: all .5s;
+   }
+   &__social-link:hover svg .cls-1 ,
+   &__social-link:focus svg .cls-1 {
+        fill: #fff;
    }
    &__social-link + .footer__social-link {
        margin-left: 10px;
@@ -626,8 +664,95 @@
        padding-bottom: 30px;
    }
 }
+//end footer
 
+//popup
 
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    padding-top: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .5s;
+    &__content {
+        max-width: 616px;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+        padding: 30px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        font-family: 'Raleway-Bold';
+        font-weight: 700;
+        position: relative;
+    }
+    &__title {
+        color: $darkgrey;
+        text-transform: uppercase;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+    &__input {
+        text-align: center;
+        font-family: 'Lobster-Regular';
+        padding: 15px;
+        background-color: transparent;
+        width: 100%;
+        border: none;
+        margin-bottom: 25px;
+        border-bottom: 2px solid $darkgrey;
+        color: #000;
+        text-align: left;
+    }    
+    &__btn {
+        text-transform: uppercase;
+        color: #1b1b1b;
+        font-size: 12px;
+        line-height: 20px;
+        background-color: $yellow;
+        border-radius: 35px;
+        padding: 18px 35px;
+        border: none;
+        margin-left: auto;
+        cursor: pointer;
+        transition: all .5s;
+        margin-bottom: 20px;
+        &:hover,
+        &:focus {
+            background-color: $darkgrey;
+            color: #fff;
+        }
+    }
+    &__close {
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #000;
+    }
+}
+.faded {
+    animation: faded .5s ease-in;
+}
+@keyframes faded {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 
   
