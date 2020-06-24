@@ -28,8 +28,16 @@ $(function(){
         }
     });
 
+    new WOW().init();
+
+    $('.header__mobile').on('click', function() {
+        $('.header__nav').slideToggle();
+    });
+
 });
 
+
+//modal
 const headerBtn = document.querySelector('.header__btn');
 const modal = document.querySelector('.popup');
 const closeBtn = document.querySelector('.popup__close');
@@ -72,6 +80,7 @@ function calcScroll() {
 //timer
 const getTimeRemaining = (endtime) => {
     const time = Date.parse(endtime) - Date.parse(new Date()),
+        seconds = Math.floor((time / 1000) % 60);
         minutes = Math.floor((time / 1000 / 60) % 60),
         hours = Math.floor((time / (1000 * 60 * 60)) % 24),
         days = Math.floor((time / (1000 * 60 *60 *24)));
@@ -80,7 +89,8 @@ const getTimeRemaining = (endtime) => {
         'total': time,
         'days': days,
         'hours': hours,
-        'minutes': minutes
+        'minutes': minutes,
+        'seconds': seconds
     }
 };
 
@@ -96,8 +106,9 @@ const setClock = (selector, endtime) => {
     const timer = document.querySelector('.timer__block'),
         days = timer.querySelector('#days'),
         hours = timer.querySelector('#hours'),
-        minutes = timer.querySelector('#minutes');
-        timeInterval = setInterval(updateClock, 60000);
+        minutes = timer.querySelector('#minutes'),
+        seconds = timer.querySelector('#seconds'),
+        timeInterval = setInterval(updateClock, 1000);
 
     updateClock();
 
@@ -107,11 +118,13 @@ const setClock = (selector, endtime) => {
         days.textContent = addZero(t.days);
         hours.textContent = addZero(t.hours);
         minutes.textContent = addZero(t.minutes);
+        seconds.textContent = addZero(t.seconds);
 
         if (t.total <= 0) {
             days.textContent = '00';
             hours.textContent = '00';
             minutes.textContent = '00';
+            seconds.textContent = '00';
 
             clearInterval(timeInterval);
         }

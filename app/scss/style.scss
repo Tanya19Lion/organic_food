@@ -18,11 +18,13 @@
         justify-content: space-between;
         align-items: center;
         padding-top: 30px;
+        position: relative;
     }
     &__logo {
         position: absolute;
         z-index: 2;
         top: 0;
+        left: 0px;
     }
     &__nav {
         margin-left: 165px;
@@ -145,6 +147,20 @@
         grid-column-start: 5;
         grid-column-end: 9;
     }
+    &__mobile {
+        display: none;
+        margin: 0 auto;
+        width: 40px;
+        cursor: pointer;
+        div {
+            height: 4px;
+            background-color: $grey;
+            width: 100%;
+            & + div {
+                margin-top: 7px;
+            }
+        }
+    }
 }
 
 //end header
@@ -153,20 +169,18 @@
 
 .slogan{
     margin-bottom: 155px;
-    &__inner {
-        position: relative;
-    }
+    position: relative;
     &__inner-picture {
         position: absolute;
         bottom: 35px;
-        right: 380px;
+        right: 707px;
         z-index: 3;
     }
     &__text {
         max-width: 525px;
         position: absolute;
         z-index: 5;
-        right: 0;
+        right: 320px;
         top: 0;
         font-size: 85px;
         line-height: 100px;
@@ -197,7 +211,7 @@
 .services {
     margin-bottom: 140px;
     &__subtitle {
-        margin-bottom: 65px;
+        margin-bottom: 45px;
     }
     &__inner {
         display: flex;
@@ -211,6 +225,7 @@
         font-family: 'Raleway-Bold';
         font-weight: 700;
         font-size: 16px;
+        margin: 20px;
     }
     &__inner-img {
         margin-bottom: 30px;
@@ -289,7 +304,9 @@
         }
     }
     &__examples {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         flex-wrap: wrap;
         position: absolute;
         bottom: -315px;
@@ -312,6 +329,11 @@
         font-family: 'Raleway-Bold';
         font-weight: 700;
         margin-bottom: 10px;
+        transition: all .5s;
+        &:hover, 
+        &:focus {
+            color: $text_grey;
+        }
     }
     &__examples-text {
         color: #666666;
@@ -334,6 +356,7 @@
     &__inner-item {
         display: flex;
         align-items: center;
+        margin: 20px;
     }
     &__inner-img {
         margin-right: 30px;
@@ -406,14 +429,14 @@
     &__block {
         display: flex;
         justify-content: center;
-        font-size: 150px;
-        line-height: 170px;
+        font-size: 115px;
+        line-height: 140px;
         font-family: 'OpenSans-Bold';
         font-weight: 700;
         margin-bottom: 40px;
         span {
-            margin-left: 15px;
-            margin-right: 15px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
     &__subject {
@@ -428,6 +451,9 @@
     }
     &__minutes {
         color: #4fb1c9;
+    }
+    &__seconds {
+        color: gold;
     }
     &__btn {
         font-family: 'Raleway-Bold';
@@ -614,8 +640,8 @@
     }
     .slick-dots {
         position: absolute;
-        right: 80px;
-        bottom: 30px;
+        right: 100px;
+        bottom: -50px;
     }
     .slick-dots li {
         display: inline-block;
@@ -644,7 +670,7 @@
 
 .partners {
     padding-top: 140px;
-    padding-bottom: 140px;
+    padding-bottom: 100px;
     &__subtitle {
         margin-bottom: 50px;
     }
@@ -666,18 +692,17 @@
         display: flex;
     }
     &__about {
-        padding-bottom: 60px;
+        padding-bottom: 35px;
         border-bottom: 1px solid #414141;
     }
     &__inner-info {
        padding-top: 80px;
-       max-width: 670px;
-       width: 100%;
-       margin: 0 170px 0 auto;
+       max-width: 600px;
+       margin: 0 220px 0 auto;
     }
    &__inner-box {
        display: flex;
-       margin-bottom: 70px;
+       margin-bottom: 40px;
    }
    &__inner-logo {
        margin-right: 155px;
@@ -716,6 +741,7 @@
        display: flex;
    }
    &__social-link {
+       margin-top: 30px;
        transition: all .5s;
    }
    &__social-link:hover svg .cls-1 ,
@@ -729,6 +755,7 @@
        padding-top: 30px;
        padding-bottom: 30px;
    }
+
 }
 //end footer
 
@@ -821,4 +848,4 @@
 }
 
 
-  
+@import '_media';  
