@@ -133,4 +133,4 @@ const setClock = (selector, endtime) => {
 
 
 
-setClock('.timer__block', '2020-06-30');
+setClock('.timer__block', '2020-07-31');

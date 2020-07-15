@@ -1,5 +1,6 @@
 let gulp = require('gulp'),
-    sass = require('gulp-sass'),
+	sass = require('gulp-sass'),
+	babel = require("gulp-babel"),
     rename = require('gulp-rename'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -20,9 +21,10 @@ gulp.task('sass', function(){
 
 gulp.task('script', function(){
     return gulp.src([
-        'node_modules/slick-carousel/slick/slick.js',
-        'node_modules/wow.js/dist/wow.js',
-    ])    
+		'node_modules/slick-carousel/slick/slick.js',
+		'node_modules/wow.js/dist/wow.js'
+	])    
+	.pipe(babel())
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('app/js'))
@@ -30,9 +32,9 @@ gulp.task('script', function(){
 
 gulp.task('style', function(){
     return gulp.src([
-        'node_modules/slick-carousel/slick/slick.css',
         'node_modules/normalize.css/normalize.css',
-        'node_modules/animate.css/animate.css',
+		'node_modules/slick-carousel/slick/slick.css',
+        'node_modules/animate.css/animate.css'g
     ])   
     .pipe(concat('libs.min.css'))
     .pipe(cssmin())
