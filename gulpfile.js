@@ -34,7 +34,7 @@ gulp.task('style', function(){
     return gulp.src([
         'node_modules/normalize.css/normalize.css',
 		'node_modules/slick-carousel/slick/slick.css',
-        'node_modules/animate.css/animate.css'g
+        'node_modules/animate.css/animate.css'
     ])   
     .pipe(concat('libs.min.css'))
     .pipe(cssmin())
