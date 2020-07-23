@@ -688,17 +688,18 @@
 //start footer
 .footer {
     background-color: #2e2e2e;
+    position: relative;
     &__inner {
         display: flex;
     }
     &__about {
         padding-bottom: 35px;
         border-bottom: 1px solid #414141;
+        padding-top: 80px;
+        max-width: 670px;
     }
     &__inner-info {
-       padding-top: 80px;
-       max-width: 600px;
-       margin: 0 220px 0 auto;
+        display: flex;
     }
    &__inner-box {
        display: flex;
@@ -721,7 +722,7 @@
         }
    }
    &__inner-email {
-       margin-right: 90px;
+       margin-right: 75px;
    }
    &__inner-phone {
         margin-right: 100px;
@@ -737,9 +738,6 @@
    &__email-name {
        color: #fff;
    }
-   &__inner-contacts {
-       display: flex;
-   }
    &__social-link {
        margin-top: 30px;
        transition: all .5s;
@@ -754,6 +752,13 @@
    &__copy {
        padding-top: 30px;
        padding-bottom: 30px;
+   }
+   &__inner-map {
+       position: absolute;
+       left: 65%;
+       top: 0;
+       height: 100%;
+       width: 100%;
    }
 
 }
